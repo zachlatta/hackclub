@@ -37,6 +37,7 @@ team.
 - Lowell High School
 - Project Cipher
 - USC Hybrid High School
+  - [Zach Latta](https://github.com/zachlatta)
 
 ## Meetings
 

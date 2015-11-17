@@ -65,8 +65,6 @@ Each recap should answer the following questions:
 
 - What you end up doing during the event and how did it differ from the
   original expectations?
-- What went well?
-- What didn't go well?
 - What tips do you have for other organizers?
   - _For example:_
     - Would you recommend doing or not doing what you did activity?

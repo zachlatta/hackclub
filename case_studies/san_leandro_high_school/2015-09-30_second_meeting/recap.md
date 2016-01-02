@@ -11,17 +11,17 @@
    our plan changed to doing the
    [portfolio workshop](https://github.com/hackedu/hack-camp/tree/master/cohort_4/playbook/workshops/portfolio).
 4. While doing the workshop I notice that:
-  - Some are on CodeCademy or CodeHS, which is totally fine as they are allowed
+  - Some are on Codecademy or CodeHS, which is totally fine as they are allowed
     to get off track if they want.
-    - Most that are working on CodeCademy are helping each other out, however,
+    - Most that are working on Codecademy are helping each other out, however,
       sometimes I have to jump in to help.
     - When CodeHS people get stuck I will usually try to explain the problem to
       them in my own words.
-  - Some are asking for DDOS-ing tools or tips
-    - I will usually respond to them that DDOS-ing is illegal, and that is not
+  - Some are asking for DDoS-ing tools or tips
+    - I will usually respond to them that DDoS-ing is illegal, and that is not
       what this club is about.
       - One idea that we can do in the future is to set up a Raspberry Pi to
-        DDOS another Raspberry Pi.
+        DDoS another Raspberry Pi.
     - People will usually help their friends that are sitting around them Maybe
       we can get encourage the entire club to work together by having group
       project instead, for example

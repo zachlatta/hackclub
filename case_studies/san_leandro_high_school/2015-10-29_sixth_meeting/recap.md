@@ -10,11 +10,11 @@
    the
    [Ajar workshop](https://github.com/hackedu/hackedu/tree/master/workshops/contrib/ajar).
 5. Half way throught the meeting I got everyone together and told them to build
-   a tower using marshallow, pasta, and tape. The rule was The tower have to be
-   touching the table, and marshallow is not allow to be touching anything
+   a tower using marshmallow, pasta, and tape. The rule was The tower have to be
+   touching the table, and marshmallow is not allow to be touching anything
    except pasta.
 6. Designs that members use are surprisingly similar to designs at Hack Camp
-   ![marshallow on ceiling](http://i.imgur.com/Kexfo4M.jpg).
+   ![marshmallow on ceiling](http://i.imgur.com/Kexfo4M.jpg).
 7. We will definitly do another energizer as members had lots of fun.
 8. Continue workshop until 20 minute before the end of meeting, then I will tell
    them to submit a feedback at

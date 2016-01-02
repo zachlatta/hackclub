@@ -3,7 +3,7 @@
 ## What Happened
 
 - Went through without slides (not ready :/). Used last week's workshop slide.
-- Talked about hackingEDU, Swag collected and people I've met.
+- Talked about HackingEDU, Swag collected and people I've met.
 - We didn't have a full hackathon participant there so no one could talk.
 - Talked about Los Altos Hacks.
 - Prepared slides later for email/facebook:
@@ -11,7 +11,7 @@
 
 ## Problems we faced
 
-- Not having slides to talk about hackingEDU was a little hard.
+- Not having slides to talk about HackingEDU was a little hard.
 - We are still thinking about the feedback forms.
 
 ## How we managed problems and outcomes

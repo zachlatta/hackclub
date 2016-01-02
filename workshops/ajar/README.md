@@ -10,7 +10,7 @@ Short link to this workshop: https://workshops.hackclub.io/ajar
   - [Part 1](#part-1)
     - [Creating the files](#creating-the-files)
     - [Setting up the HTML](#setting-up-the-html)
-    - [Writing the Javascript](#writing-the-javascript)
+    - [Writing the JavaScript](#writing-the-javascript)
     - [Congrats!](#congrats)
   - [Part 2](#part-2)
     - [What are functions?](#what-are-functions)
@@ -41,7 +41,7 @@ Short link to this workshop: https://workshops.hackclub.io/ajar
 -------------------------------------------------------------------------------
 
 [Agar.io](http://agar.io) is a popular game built for the web with
-[HTML, CSS, and Javascript](http://qr.ae/RoCXc7). The goal of this workshop is
+[HTML, CSS, and JavaScript](http://qr.ae/RoCXc7). The goal of this workshop is
 to teach you to make your own simplistic version of agar.io which we'll call
 ajar.io.
 
@@ -143,7 +143,7 @@ Next, add the below `<canvas>` element inside of the `<body>` element.
 
 -------------------------------------------------------------------------------
 
-Now we have to tell our HTML (`index.html`) to use our Javascript (`app.js`). In
+Now we have to tell our HTML (`index.html`) to use our JavaScript (`app.js`). In
 our `index.html` file we add the following line inside of the the `<body>`
 element (make sure it's at the end):
 
@@ -155,7 +155,7 @@ element (make sure it's at the end):
 
 > Your HTML is now configured!
 
-### Writing the Javascript
+### Writing the JavaScript
 
 The bulk of this workshop will take place in our the `app.js` file. If you
 completed the previous section successfully, your `app.js` file should be linked
@@ -202,7 +202,7 @@ Time to draw a circle! Open your `index.html` file and from the menu bar click
 
 ![](img/live_preview.gif)
 
-Now each time you save changes to your HTML or Javascript your site will refresh
+Now each time you save changes to your HTML or JavaScript your site will refresh
 to reflect the changes. Remember to *save* changes by going to `File > Save`.
 
 Write the following lines at the end of your `app.js` file:
@@ -222,8 +222,8 @@ You should have something that looks like this.
 **Understanding The Code**
 
 > `context.beginPath()` - Any shape on the canvas is considered a path. You need
-> to call this function before begining to draw a new shape. In this case we are
-> starting to draw a circle.
+> to call this function before beginning to draw a new shape. In this case we
+> are starting to draw a circle.
 
 > `context.arc(10, 10, 10, 0, 2*3.14159)` - This function creates an arc. An arc
 > that ends where it starts forms a circle. The function takes a lot of
@@ -493,7 +493,7 @@ Since the position of our circle will _change_ those values have to be
 variable. How do we make something variable? Oh right! Variables!
 
 So we will make variables `x` and `y` and plop them at the start of our
-Javascript file, right under where we declare `context`:
+JavaScript file, right under where we declare `context`:
 
 ```js
 var canvas = document.getElementById("canvas");
@@ -571,7 +571,7 @@ canvas.addEventListener("mousemove", mouseMoved);
 
 > Notice we **do not** invoke the `mouseMoved` function ourselves (by writing
 > `mouseMoved()`). Instead we simply tell the `EventListner` to invoke the
-> function for us each time it recieves a `mousemove` event.
+> function for us each time it receives a `mousemove` event.
 
 Finally, let's draw a new cell each time the mouse is moved. To do this, we
 simply invoke the `drawUserCell` function from within our `mouseMoved`
@@ -677,7 +677,7 @@ your cursor.
 ### Let's recap
 
 In Part 3 you learned about functions. Remember that functions are
-**self-contained blocks of code**. They can recieve input - In the form of
+**self-contained blocks of code**. They can receive input - In the form of
 **parameters**.
 
 This is how we wrapped the code used to draw the user's cell into a function

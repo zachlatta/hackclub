@@ -136,7 +136,7 @@ will not change what your website looks like.
 However we can change the style of some things on the page by adding **HTML
 tags**.
 
-[google_html]: https://www.google.com/search?q=html
+[Googling for HTML]: https://www.google.com/search?q=html
 
 ## The Heading HTML Tag
 

@@ -9,11 +9,11 @@ Twilio API to make phone calls and send text messages that allow you to make
 things like group texting apps.
 
 > Note: An API is an agreed upon way for one program to interact with another.
-APIs are cool because they let even our very simple programs to interact with
-very powerful programs with minimal code.
+> APIs are cool because they let very simple programs to interact with very
+> powerful programs with minimal code.
 
- In this workshop, you probably won't understand how it all works and that's
- totally cool. Your objective is to learn how to make things happen.
+In this workshop, you probably won't understand how everything works and that's
+totally cool! Your objective is to learn how to make things happen.
 
 ## Part A: Setup
 
@@ -24,54 +24,57 @@ Please use Google Chrome for this tutorial
 1. Install Google Chrome on your computer if you haven't already
 2. Use Google Chrome for the rest of this tutorial
 
-### 2) Cloud 9 Setup
+### 2) Cloud9 Setup
 
 1. Log in to https://c9.io
 2. Open your **projects** workspace (the one you created in the
    [personal website](../personal-website/README.md) workshop)
 3. Create a new folder called `twilio` in the `projects` folder
 
-When you're done with it, your folder structure should look like this:
+When you're done, your folder structure should look like this:
 
 ![](img/created_twilio_folder.png)
 
 ### 3) Create the HTML file for your website
 
-Create an `index.html` file inside of the `twilio` folder:
+Create a file called `index.html` inside of the `twilio` folder:
 
 1. Right click the `twilio` folder you just created
 2. Click **"New File"**
-3. Then name the file **`index.html`**
+3. Name the file **`index.html`**
 
    ![](img/created_index_html_file.png)
 
-5. Open the newly created `index.html` and type the below HTML template into it:
+5. Open the newly created `index.html` and _type_ the below HTML template into
+   it (don't copy and paste!):
 
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-    </head>
-    <body>
-    </body>
-</html>
-```
+   ```html
+   <!DOCTYPE html>
+   <html>
+     <head>
+     </head>
+     <body>
+     </body>
+   </html>
+   ```
 
 ### 4) Add the Twilio Library
 
 To add the capability to send text messages and make phone calls, we need to
-add the Twilio Basic JavaScript library.
+add the `twilio-basic` JavaScript library. This is a set of code created by Hack
+Club to make it easier to make calls and send text messages using
+[Twilio](https://twilio.com).
 
 1. Copy and paste the below `script` tag inside the `body` tag.
 
-  ```html
-  <script src="//bit.ly/twilio-basic-v7"
-                  sid="YOUR_TWILIO_ACCOUNT_SID_HERE"
-                  token="YOUR_TWILIO_AUTH_TOKEN_HERE">
-          </script>
-  ```
+   ```html
+   <script src="//bit.ly/twilio-basic-v7"
+     sid="YOUR_TWILIO_ACCOUNT_SID_HERE"
+     token="YOUR_TWILIO_AUTH_TOKEN_HERE">
+   </script>
+   ```
 
-  ![](img/add_twilio_basic_script.gif)
+   ![](img/add_twilio_basic_script.gif)
 
 ### 5) Set your Twilio `sid` and `token`
 
@@ -80,25 +83,25 @@ add the Twilio Basic JavaScript library.
    SID and a token. If not, you should ask them for one.
 
    > Note: If you are the facilitator (or if you're just doing this workshop by
-     yourself), follow the directions [here](../lib/twilio-basic/signup.md) to
-     get your own Twilio SID and token.
+   > yourself), follow the directions [here](../lib/twilio-basic/signup.md) to
+   > get your own Twilio SID and token.
 
   ![](img/setting_sid_and_token.gif)
 
 ### 6) Creating our JavaScript File
 
 If **HTML** is for the content, and **CSS** is for the look and feel of the
-website, **JavaScript** is used for interactivity, such as sending and receiving
-phone calls and text messages.
+website, **JavaScript** is used to make the website interactive, such as having
+it send and receive phone calls and text messages.
 
-Just like we wrote **HTML** in `.html` files and **CSS** in `.css` files, we
+Just like how we wrote **HTML** in `.html` files and **CSS** in `.css` files, we
 write JavaScript in `.js` files.
 
-Create an `main.js` file inside of the `twilio` folder:
+Create a file called `main.js` inside of the `twilio` folder:
 
 1. Right click the **`twilio`** folder you just created
 2. Click **"New File"**
-3. Then name the file **`main.js`**
+3. Name the file **`main.js`**
 
 ![](img/added_main_js.png)
 
@@ -120,29 +123,28 @@ explicitly include it with a **`script`** tag, like so:
 ### 1) Writing the Code to Call Your Phone
 
 1. Type the following into your `main.js` file (don't forget the parentheses
-   commas, and quotation marks.):
+   commas, and quotation marks):
 
    ```js
    Twilio.sendMessage("555-555-5555", "You just subscribed to Gossip Girl");
    ```
-
-   - This code JavaScript calls the phone number `555-555-5555` and says the
-     message `You just subscribed to Gossip Girl.` We don't want that.
-
-2. Change `555-555-5555` to your cell phone number
+2. This sends a text message to the phone number `555-555-5555` saying `You just
+   subscribed to Gossip Girl` Replace `555-555-5555` with your phone number to
+   have it text your phone instead.
 
 ![](img/twilio_send_message.gif)
 
 ### 2) Running the JavaScript code
 
-Our the code in our `main.js` file will now run every time the `index.html` page
-is open:
+The code in our `main.js` file will now run every time the `index.html` page is
+opened in a web browser. Let's open it!
 
-1. Open `index.html`
-2. Click **"Preview"** → **"Live Preview File"**
+1. Open `index.html` in Cloud9
+2. Click **"Preview"** → **"Live Preview File"** to run `index.html` in your
+   browser
 3. You should now receive a text message!
 
-   ![](img/celebrate_1.gif)
+![](img/celebrate_1.gif)
 
 ### 3) Adding Some Text
 
@@ -150,36 +152,38 @@ Just to add some clarity to our currently blank webpage:
 
 1. Add the below text to the `body` of the HTML:
 
-  ```html
-  <p>Refresh the page to run the code again</p>
-  ```
+   ```html
+   <p>Refresh the page to run the code again</p>
+   ```
 
-  ![](img/add_instructions.gif)
+   ![](img/add_instructions.gif)
 
 ### 3) Modifying And Running New Code
 
-Let's say we want to change the code.
+Let's change the code to call the given phone number instead of texting it.
 
 1. Make sure you have a preview of the `index.html` open
 2. Then open `main.js` and change `Twilio.sendMessage` to `Twilio.callAndSay`
+
    ![](img/change_send_message_to_call_and_say.gif)
-3. Save your `main.js` file by clicking **"File"** → **"Save"** (or use the
+
+3. Save your `main.js` file by clicking **"File"** → **"Save"** (or by using the
    shortcut **CTRL + S / Command + S**)
    - Notice that when you save, the page flashes. This means that the page is
-     refreshing and each time your page refreshes, it runs your JavaScript code
+     refreshing. Each time your page refreshes, it runs your JavaScript code
      again. In this case this sends you a text message.
 
-### 4) Have some fun
+### 4) Have Some fun
 
-Try calling a bunch of phones at once. Ask your neighbors for their phone number.
-Then you duplicate the code to call more people's phones!
+Try calling a bunch of phones at once. Ask your neighbors for their phone
+number. Then you can duplicate the code to call more people's phones!
 
-> ![](img/duplicating_call_and_say.gif)
+![](img/duplicating_call_and_say.gif)
 
 ### 5) Peeking Under the Hood
 
-The live preview inside of Cloud9 is great for testing out HTML & CSS, but it
-is not powerful enough for us to test out our JavaScript. For that we will use
+The live preview inside of Cloud9 is great for testing out HTML & CSS, but it is
+not powerful enough for us to test out our JavaScript. For that we will use
 Google Chrome's developer tools. This will let us see **console messages** and
 **JavaScript errors**.
 
@@ -188,14 +192,13 @@ To open your website in Google Chrome
 1. In the live preview window, click the button that looks like this
    ![](img/live_preview_button.png)
 2. Now open the developer console.
-    - **Mac Directions**
-      1. Click **"View"** → **"Developer"** → **"JavaScript Console"** (or use
-         the shortcut **`Command + option + j`**
-    - **PC Directions**
-      1. Use the shortcut **`CTRL + Shift + J`**
+  - **Mac Directions**
+    1. Click **"View"** → **"Developer"** → **"JavaScript Console"** (or use
+       the shortcut **`Command + option + j`**
+  - **PC Directions**
+    1. Use the shortcut **`CTRL + Shift + J`**
 
-
-In the console here, you can see what's happening underneath the hood:
+In the console, you can see what's happening underneath the hood:
 
 > ![](img/console.png)
 

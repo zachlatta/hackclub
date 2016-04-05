@@ -7,18 +7,15 @@ Hack Clubs are after-school communities at high schools where people build thing
 [![Slack Status](https://slack.hackclub.com/badge.svg)](https://slack.hackclub.com)
 [![Build Status](https://circleci.com/gh/hackclub/hackclub.svg?style=shield)](https://circleci.com/gh/hackclub/hackclub)
 
-Quick Hack Club links:
+Important Hack Club links:
 
-| Action                                    | Link                           |
+| Destination                               | Link                           |
 | ----------------------------------------- | ------------------------------ |
-| Join the Slack _(we're here almost 24/7)_ | [`SLACK.md`](SLACK.md)         |
-| See our workshops                         | https://workshops.hackclub.com |
-| See the club guide                        | [`clubs/README.md`][guide]     |
-| Start a club                              | https://hackclub.com/apply     |
-| See our website                           | https://hackclub.com           |
-| Read our code of conduct                  | [`CONDUCT.md`](CONDUCT.md)     |
-
-[guide]: clubs/README.md
+| Slack                                     | https://slack.hackclub.com     |
+| Workshops                                 | https://workshops.hackclub.com |
+| Club guide                                | https://guide.hackclub.com     |
+| Code of conduct                           | [`CONDUCT.md`](CONDUCT.md)     |
+| Website                                   | https://hackclub.com           |
 
 ## Contributing
 

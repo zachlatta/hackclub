@@ -99,7 +99,7 @@ function draw() {
 }
 ```
 
-`background()` is a function that sets the appearance of the background. Here we're using three arguments to define the RGB values of a color, which will be the background color of our canvas. You can use `background` in some more ways, though, which are detailed in documentation [here](https://p5.js.org/reference/#/p5/background).
+`background()` is a function that sets the appearance of the background. Here we're using three arguments to define the RGB values of a color, which will be the background color of our canvas. You can use `background` in some more ways, though, which are detailed in documentation [here](https://p5js.org/reference/#/p5/background).
 
 Now that we've finished setting up, it's time to add the most important thing to our game: you, the player.
  
@@ -344,7 +344,7 @@ function gameOver() {
 }
 ```
 
-We're drawing a background for our Game Over screen, and then placing text over it. I'm sure you can guess what `textAlign(CENTER)` does, but [here's the documentation](http://p5.js.org/reference/#p5/textAlign) for more detail. We've inserted the text "Game Over!" at the center of the screen using [`text()`](http://p5js.org/reference/#/p5/text).
+We're drawing a background for our Game Over screen, and then placing text over it. I'm sure you can guess what `textAlign(CENTER)` does, but [here's the documentation](http://p5js.org/reference/#p5/textAlign) for more detail. We've inserted the text "Game Over!" at the center of the screen using [`text()`](http://p5js.org/reference/#/p5/text).
 
 Hm, looks like the `draw()` function just keeps on drawing the game, even after the game ends.
 

@@ -26,18 +26,18 @@ Our project's code is going to be divided into two files: `index.html` (the HTML
 1. Create a new directory in your Cloud9 workspace called `dodge`
 2. Create a file and copy and paste the following into it. Save it as `index.html` inside of the `dodge` directory.
 
-     ```html
-     <!DOCTYPE html>
-     <html>
-     <head>
-       <title>Dodge</title>
-     </head>
-     <body>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.12/p5.js"></script>
-       <script src="https://cdn.rawgit.com/molleindustria/p5.play/master/lib/p5.play.js"></script>
-     </body>
-     </html>
-     ```
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Dodge</title>
+    </head>
+    <body>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.12/p5.js"></script>
+      <script src="https://cdn.rawgit.com/molleindustria/p5.play/master/lib/p5.play.js"></script>
+    </body>
+    </html>
+    ```
 
      The two `script` tags inside of `body` tell the browser to load p5.js and p5.play _(improve this introduction)_
  

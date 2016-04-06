@@ -120,7 +120,7 @@ function setup() {
 }
 ```
 
-[`createSprite()`](http://p5.play.molleindustria.org/docs/classes/p5.play.html#method-createSprite) makes a placeholder for an image (meaning you can customize with your own!), and takes four arguments (horizontal and vertical coordinates, and width and height of sprite, respectively).
+[`createSprite()`](http://p5play.molleindustria.org/docs/classes/p5.play.html#method-createSprite) makes a placeholder for an image (meaning you can customize with your own!), and takes four arguments (horizontal and vertical coordinates, and width and height of sprite, respectively).
 
 Here it might make sense to mention that the coordinate system of p5.js is not like the traditional one you may have seen in your maths classes. P5js has its origin (0,0) at the upper left corner of the canvas, with the x and y values increasing rightward and downward.
 

@@ -2,7 +2,7 @@
 
 Short link to this workshop: https://workshops.hackclub.com/dodge
 
--------------------------------------------------------------------------------
+---
 
 In this workshop we're going to build a simple yet addictive game using JavaScript. Previously when we've done web development projects, we've used HTML elements and things of that ilk to build what we see in the browser. Today we're going to do things a little differently and use some new tools-- JavaScript, along with two great libraries called p5.js and p5.play, to build our game.
 

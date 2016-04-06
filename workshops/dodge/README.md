@@ -344,7 +344,7 @@ function gameOver() {
 }
 ```
 
-We're drawing a background for our Game Over screen, and then placing text over it. I'm sure you can guess what `textAlign(CENTER)` does, but [here's the documentation](http://p5js.org/reference/#p5/textAlign) for more detail. We've inserted the text "Game Over!" at the center of the screen using [`text()`](http://p5js.org/reference/#/p5/text).
+We're drawing a background for our game over screen, and then placing text over it. I'm sure you can guess what `textAlign(CENTER)` does, but [here's the documentation](http://p5js.org/reference/#p5/textAlign) for more detail. We've inserted the text "Game Over!" at the center of the screen using [`text()`](http://p5js.org/reference/#/p5/text).
 
 Hm, looks like the `draw()` function just keeps on drawing the game, even after the game ends.
 
@@ -379,15 +379,15 @@ function draw() {
 
 (For the sake of readability, I'm only including the changes, and not the entire code up to this point.) 
 
-We'll initialize this variable with the value `false`, because the game is not yet over at the beginning. Then we'll set up a conditional in `draw()`, to check if the game is over, in which case we'll run `gameOver()`. In the `else` block, we'll put what we've written for gameplay so far. Remember to change the body of the conditional that checks for collision. We want to update the flag, instead of calling `gameOver()` directly. By updating the flag, we're redirecting the `draw()` function to the Game Over screen, so to speak.
+We'll initialize this variable with the value `false`, because the game is not yet over at the beginning. Then we'll set up a conditional in `draw()`, to check if the game is over, in which case we'll run `gameOver()`. In the `else` block, we'll put what we've written for gameplay so far. Remember to change the body of the conditional that checks for collision. We want to update the flag, instead of calling `gameOver()` directly. By updating the flag, we're redirecting the `draw()` function to the game over screen, so to speak.
 
 Great! It seems to be working nicely now. But how can we allow the player to try again?
 
 ### Restart Game
 
-Let's have the user be able to restart the game by clicking the canvas upon seeing the Game Over screen.
+Let's have the user be able to restart the game by clicking the canvas upon seeing the game over screen.
 
-First, we have to let the user know that this is available to them. We'll make use of the `text()` function, and instruct the user to click the canvas to restart the game. Let's add a line to the Game Over screen.
+First, we have to let the user know that this is available to them. We'll make use of the `text()` function, and instruct the user to click the canvas to restart the game. Let's add a line to the game over screen.
 
 ```js
 function gameOver() {
@@ -415,7 +415,7 @@ function mouseClicked() {
 }
 ```
 
-Hmm, why does the canvas display the game only for a moment before switching back to the Game Over screen?
+Hmm, why does the canvas display the game only for a moment before switching back to the game over screen?
 
 Of course, our player and enemy are still intersecting, because we never reset the positions!
 
@@ -447,7 +447,7 @@ function mouseClicked() {
 }
 ```
 
-Now we're in business. Mouse clicks will only reset the game if the game has ended, i.e., only on the Game Over screen.
+Now we're in business. Mouse clicks will only reset the game if the game has ended, i.e., only on the game over screen.
 
 ### Spicing it up
 

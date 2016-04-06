@@ -315,7 +315,7 @@ Et voilà! Our enemy now shows up randomly across the top of the canvas! And dro
 
 Well, if you've failed to dodge the enemy at least once, you'll realize that the player is not forced to frantically dodge after all... the enemy doesn't attack it at all.
 
-Let's make it a real threat by recognizing when the enemy and player collide. P5.Play provides the `overlap()` method on our sprites for doing just that.
+Let's make it a real threat by recognizing when the enemy and player collide. p5.play provides the `overlap()` method on our sprites for doing just that.
 
 ```js
 if (enemy.overlap(player)) {
@@ -453,7 +453,7 @@ Now we're in business. Mouse clicks will only reset the game if the game has end
 
 You'll notice that these things are all sprites, which means you can substitute in your own images!
 
-p5.js has a function called `loadImage()` into which you can pass the URL of an image as an argument. P5.Play sprites have the method `addImage()` that you can then pass the loaded image into.
+p5.js has a function called `loadImage()` into which you can pass the URL of an image as an argument. p5.play sprites have the method `addImage()` that you can then pass the loaded image into.
 
 ```js
 var playerImage = loadImage("http://i.imgur.com/m0kHDqN.png");

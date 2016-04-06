@@ -4,10 +4,10 @@ Short link to this workshop: https://workshops.hackclub.com/dodge
 
 -------------------------------------------------------------------------------
 
-In this workshop we're going to build a simple yet addictive game using JavaScript. Previously when we've done web development projects, we've used HTML elements and things of that ilk to build what we see in the browser. Today we're going to do things a little differently and use some new tools-- JavaScript, along with two great libraries called p5js and p5play, to build our game.
+In this workshop we're going to build a simple yet addictive game using JavaScript. Previously when we've done web development projects, we've used HTML elements and things of that ilk to build what we see in the browser. Today we're going to do things a little differently and use some new tools-- JavaScript, along with two great libraries called p5.js and p5.play, to build our game.
 
-p5js is a library for making stuff in conjunction with HTML canvas. It is a JS port of Processing, a (library? language? framework?) for making pictures and such.
-p5play is made by a really cool game company called [Molleindustria](http://www.molleindustria.org/), and builds on p5js to add easy to use functionality that comes in handy in building games.
+p5.js is a library for making stuff in conjunction with HTML canvas. It is a JS port of Processing, a (library? language? framework?) for making pictures and such.
+p5.play is made by a really cool game company called [Molleindustria](http://www.molleindustria.org/), and builds on p5.js to add easy to use functionality that comes in handy in building games.
 
 ## Table of contents:
 
@@ -27,7 +27,7 @@ Though we're not using many HTML elements today, in order to display our game on
 <script src="game.js"></script>
 ```
 
-The first line grabs the p5js library from where it's hosted on Cloudflare. The second grabs the p5play library that we'll need to build our game. And the third tells our HTML file about the external JS file where we'll write our game.
+The first line grabs the p5.js library from where it's hosted on Cloudflare. The second grabs the p5.play library that we'll need to build our game. And the third tells our HTML file about the external JS file where we'll write our game.
 
 Create a new file named `index.html` in your directory, and throw those `<script>` tags in the `<body>`. Spin up the live preview and prepare to be blown away ... by nothing.
 
@@ -36,7 +36,7 @@ That's it for the HTML page! Next we'll create that external JS file we just ref
 ## Part II. The External JS File
 
 ### Set up
-Create a new file named `game.js` in your directory, and open it up. P5js works by calling two special functions: `setup()` and `draw()`. Let's add them to our file.
+Create a new file named `game.js` in your directory, and open it up. P5.Js works by calling two special functions: `setup()` and `draw()`. Let's add them to our file.
 
 ```
 function setup() {
@@ -68,7 +68,7 @@ function draw() {
 }
 ```
 
-`background()` is a function that sets the appearance of the background. Here we're using three arguments to define the RGB values of a color, which will be the background color of our canvas. You can use background in some more ways, though, which are detailed in documentation [here](https://p5js.org/reference/#/p5/background).
+`background()` is a function that sets the appearance of the background. Here we're using three arguments to define the RGB values of a color, which will be the background color of our canvas. You can use background in some more ways, though, which are detailed in documentation [here](https://p5.js.org/reference/#/p5/background).
 
 Now that we've finished setting up, it's time to add the most important thing to our game-- the player.
  
@@ -90,9 +90,9 @@ function setup() {
 }
 ```
 
-[`createSprite()`](http://p5play.molleindustria.org/docs/classes/p5.play.html#method-createSprite) makes a placeholder for an image (meaning you can customize with your own!), and takes four arguments (horizontal and vertical coordinates, and width and height of sprite, respectively).
+[`createSprite()`](http://p5.play.molleindustria.org/docs/classes/p5.play.html#method-createSprite) makes a placeholder for an image (meaning you can customize with your own!), and takes four arguments (horizontal and vertical coordinates, and width and height of sprite, respectively).
 
-Here it might make sense to mention that the coordinate system of p5js is not like the traditional one you may have seen in your maths classes. P5js has its origin (0,0) at the upper left corner of the canvas, with the x and y values increasing rightward and downward.
+Here it might make sense to mention that the coordinate system of p5.js is not like the traditional one you may have seen in your maths classes. P5js has its origin (0,0) at the upper left corner of the canvas, with the x and y values increasing rightward and downward.
 
 Okay, so it looks like we've added our player-- wait. No, it doesn't. Turns out that while we've created a player, we haven't shown it on our canvas anywhere.
 
@@ -103,7 +103,7 @@ function draw() {
 }
 ```
 
-Fortunately, the p5play library also offers a really simple function for displaying sprites, namely, `drawSprites()`.
+Fortunately, the p5.play library also offers a really simple function for displaying sprites, namely, `drawSprites()`.
 
 Et voilà. Now we can view our sprite. It looks like it's cut off, though. Guess we have to adjust the y-position. Let's modify that in our initial creation of the player, in `setup()`.
 
@@ -136,7 +136,7 @@ Now that we've introduced motion into our game, it's time to put some restrictio
 
 ### Adding Controls
 
-We only want the player to move when we press the controls. P5js gives us a way to detect when keys are being pressed, namely with the function `keyDown()`. This function takes an argument that represents a key. For our purposes, we'll be needing `LEFT_ARROW` and `RIGHT_ARROW`, which are preset to correspond to the left and right arrow keys, respectively.
+We only want the player to move when we press the controls. P5.Js gives us a way to detect when keys are being pressed, namely with the function `keyDown()`. This function takes an argument that represents a key. For our purposes, we'll be needing `LEFT_ARROW` and `RIGHT_ARROW`, which are preset to correspond to the left and right arrow keys, respectively.
 
 Let's wrap the line about incrementing x-position by 1 in a conditional, so that it only happens on the condition that the right arrow key is pressed:
 
@@ -235,7 +235,7 @@ Let's make it come towards the player, and have it drop down to the bottom of th
 enemy.position.y = enemy.position.y + 1;
 ```
 
-Instead of modifying `position.x`, we're modifying `position.y`, because we want the enemy to move vertically. We're incrementing the value, because we want the position to move downward. Remember, in the coordinate system in p5js, the y values increase in the downward direction.
+Instead of modifying `position.x`, we're modifying `position.y`, because we want the enemy to move vertically. We're incrementing the value, because we want the position to move downward. Remember, in the coordinate system in p5.js, the y values increase in the downward direction.
 
 I'm going to make my enemy a bit faster than my player.
 
@@ -276,7 +276,7 @@ if (enemy.position.y > height) {
 }
 ```
 
-Here we're using the function `random()`, provided for us by p5js. `random()` is a neat function that can accept different numbers of arguments. You can check out its documentation [here](http://p5js.org/reference/#p5/random).
+Here we're using the function `random()`, provided for us by p5.js. `random()` is a neat function that can accept different numbers of arguments. You can check out its documentation [here](http://p5js.org/reference/#p5/random).
 
 For our purposes we are passing in two numerical arguments to `random()`, with which it will give us a random value between the two numbers. Thanks to our previous run-ins with dealing with the edges of the canvas, we've experienced enough to know that we need a 5-pixel buffer on each side.
 
@@ -286,7 +286,7 @@ Et voilà! Our enemy now shows up randomly across the top of the canvas! And dro
 
 Well, if you've failed to dodge the enemy at least once, you'll realize that the player is not forced to frantically dodge after all... the enemy doesn't attack it at all.
 
-Let's make it a real threat by recognizing when the enemy and player collide. P5play provides the `overlap()` method on our sprites for doing just that.
+Let's make it a real threat by recognizing when the enemy and player collide. P5.Play provides the `overlap()` method on our sprites for doing just that.
 
 ```
 if (enemy.overlap(player)) {
@@ -298,7 +298,7 @@ This is our lose condition. Now we can punish the user for losing in this `gameO
 
 ### Game Over
 
-Even though it may feel like we've been writing all of our code in these two special p5js functions to make stuff in the canvas, we musn't forget that we are still just writing JavaScript. So let's define our own function, `gameOver()`, the way we would any other JS function. We'll place it underneath the `draw()` function.
+Even though it may feel like we've been writing all of our code in these two special p5.js functions to make stuff in the canvas, we musn't forget that we are still just writing JavaScript. So let's define our own function, `gameOver()`, the way we would any other JS function. We'll place it underneath the `draw()` function.
 
 ```
 function gameOver() {
@@ -315,7 +315,7 @@ function gameOver() {
 }
 ```
 
-We're drawing a background for our Game Over screen, and then placing text over it. I'm sure you can guess what `textAlign(CENTER)` does, but [here's the documentation](http://p5js.org/reference/#p5/textAlign) for more detail. We've inserted the text "Game Over!" at the center of the screen using [`text()`](http://p5js.org/reference/#/p5/text).
+We're drawing a background for our Game Over screen, and then placing text over it. I'm sure you can guess what `textAlign(CENTER)` does, but [here's the documentation](http://p5.js.org/reference/#p5/textAlign) for more detail. We've inserted the text "Game Over!" at the center of the screen using [`text()`](http://p5js.org/reference/#/p5/text).
 
 Hm, looks like the `draw()` function just keeps on drawing the game, even after the game ends.
 
@@ -372,7 +372,7 @@ function gameOver() {
 
 And second, we have to detect the user's click and restart the game on detection.
 
-P5js has a handy mechanism for this! There is a built-in function that will execute when a click is registered on the canvas, called [`mouseClicked`]. We just have to define the body of this function and specify what to do when the user clicks.
+P5.Js has a handy mechanism for this! There is a built-in function that will execute when a click is registered on the canvas, called [`mouseClicked`]. We just have to define the body of this function and specify what to do when the user clicks.
 
 ```
 function mouseClicked() {
@@ -426,7 +426,7 @@ Now we're in business. Mouse clicks will only reset the game if the game has end
 
 You'll notice that these things are all sprites, which means you can substitute in your own images!
 
-P5js has a function called `loadImage()` into which you can pass the URL of an image as an argument. P5play sprites have the method `addImage()` that you can then pass the loaded image into.
+P5.Js has a function called `loadImage()` into which you can pass the URL of an image as an argument. P5.Play sprites have the method `addImage()` that you can then pass the loaded image into.
 
 ```
 var playerImage = loadImage("http://i.imgur.com/m0kHDqN.png");
@@ -541,4 +541,4 @@ What if the enemies didn't drop straight down, but instead bounced around the sc
 What if there were levels in which they got faster, and the player got faster?  
 Did you find it hard to restart the game because you had to switch from clicking to frantically mashing arrow keys to dodging the first enemy? Might it be better instead to use a key to restart the game? Or, might it be better to randomize the initial position to better your chances of survival? (Hint, we've already used the relevant functions in this workshop!)
 
-Infinite possibilities await you! [P5js documentation](http://p5js.org/reference/) is a great resource, and can help you fulfill all of your wildest ambitions for this game!
+Infinite possibilities await you! [P5.Js documentation](http://p5js.org/reference/) is a great resource, and can help you fulfill all of your wildest ambitions for this game!

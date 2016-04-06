@@ -38,7 +38,7 @@ Our project's code is going to be divided into two files: `index.html` (the HTML
      </body>
      </html>
      ```
-     
+
      The two `script` tags inside of `body` tell the browser to load p5.js and p5.play _(improve this introduction)_
  
 3. Create another new file and then save it as `game.js` inside of the `dodge` directory. Leave it empty for now.
@@ -515,24 +515,24 @@ function draw() {
         gameOver();
     } else {
         background(0,0,100);
-        
+
         if (keyDown(LEFT_ARROW) && player.position.x > PLAYER_WIDTH/2) {
             player.position.x -= 1; //(player.position.x - 1)%width;
         }
         if (keyDown(RIGHT_ARROW) && player.position.x < (width - PLAYER_WIDTH/2)) {
             player.position.x += 1;
         }
-    
+
         enemy.position.y += 3;
         if (enemy.position.y > height) {
             enemy.position.y = 0;
             enemy.position.x = random(ENEMY_WIDTH/2,width-(ENEMY_WIDTH/2));
         }
-        
+
         if (enemy.overlap(player)) {
             isGameOver = true;
         }
-        
+
         drawSprites();
     }
 }

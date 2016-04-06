@@ -36,11 +36,13 @@ That's it for the HTML page! Next we'll create that external JS file we just ref
 ## Part II. The External JS File
 
 ### Set up
-Create a new file named `game.js` in your directory, and open it up. P5.Js works by calling two special functions: `setup()` and `draw()`. Let's add them to our file.
 
-```
+Create a new file named `game.js` in your directory, and open it up. p5.js works by calling two special functions: `setup()` and `draw()`. Let's add them to our file.
+
+```js
 function setup() {
 }
+
 function draw() {
 }
 ```
@@ -136,7 +138,7 @@ Now that we've introduced motion into our game, it's time to put some restrictio
 
 ### Adding Controls
 
-We only want the player to move when we press the controls. P5.Js gives us a way to detect when keys are being pressed, namely with the function `keyDown()`. This function takes an argument that represents a key. For our purposes, we'll be needing `LEFT_ARROW` and `RIGHT_ARROW`, which are preset to correspond to the left and right arrow keys, respectively.
+We only want the player to move when we press the controls. p5.js gives us a way to detect when keys are being pressed, namely with the function `keyDown()`. This function takes an argument that represents a key. For our purposes, we'll be needing `LEFT_ARROW` and `RIGHT_ARROW`, which are preset to correspond to the left and right arrow keys, respectively.
 
 Let's wrap the line about incrementing x-position by 1 in a conditional, so that it only happens on the condition that the right arrow key is pressed:
 
@@ -372,7 +374,7 @@ function gameOver() {
 
 And second, we have to detect the user's click and restart the game on detection.
 
-P5.Js has a handy mechanism for this! There is a built-in function that will execute when a click is registered on the canvas, called [`mouseClicked`]. We just have to define the body of this function and specify what to do when the user clicks.
+p5.js has a handy mechanism for this! There is a built-in function that will execute when a click is registered on the canvas, called [`mouseClicked`]. We just have to define the body of this function and specify what to do when the user clicks.
 
 ```
 function mouseClicked() {
@@ -426,7 +428,7 @@ Now we're in business. Mouse clicks will only reset the game if the game has end
 
 You'll notice that these things are all sprites, which means you can substitute in your own images!
 
-P5.Js has a function called `loadImage()` into which you can pass the URL of an image as an argument. P5.Play sprites have the method `addImage()` that you can then pass the loaded image into.
+p5.js has a function called `loadImage()` into which you can pass the URL of an image as an argument. P5.Play sprites have the method `addImage()` that you can then pass the loaded image into.
 
 ```
 var playerImage = loadImage("http://i.imgur.com/m0kHDqN.png");
@@ -541,4 +543,4 @@ What if the enemies didn't drop straight down, but instead bounced around the sc
 What if there were levels in which they got faster, and the player got faster?  
 Did you find it hard to restart the game because you had to switch from clicking to frantically mashing arrow keys to dodging the first enemy? Might it be better instead to use a key to restart the game? Or, might it be better to randomize the initial position to better your chances of survival? (Hint, we've already used the relevant functions in this workshop!)
 
-Infinite possibilities await you! [P5.Js documentation](http://p5js.org/reference/) is a great resource, and can help you fulfill all of your wildest ambitions for this game!
+Infinite possibilities await you! [p5.js documentation](http://p5js.org/reference/) is a great resource, and can help you fulfill all of your wildest ambitions for this game!

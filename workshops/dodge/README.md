@@ -348,11 +348,12 @@ And let's display a game over screen.
 function gameOver() {
   background(0);
   textAlign(CENTER);
+  fill("white";)
   text("Game Over!", width/2, height/2);
 }
 ```
 
-We're drawing a background for our game over screen, and then placing text over it. I'm sure you can guess what `textAlign(CENTER)` does, but [here's the documentation](http://p5js.org/reference/#p5/textAlign) for more detail. We've inserted the text "Game Over!" at the center of the screen using [`text()`](http://p5js.org/reference/#/p5/text).
+We're drawing a background for our game over screen, and then placing text over it. I'm sure you can guess what `textAlign(CENTER)` does, but [here's the documentation](http://p5js.org/reference/#p5/textAlign) for more detail. We've inserted the text "Game Over!" at the center of the screen using [`text()`](http://p5js.org/reference/#/p5/text). We run `fill("white")` before calling the `text()` function to tell p5 to draw the text as white.
 
 Hm, looks like the `draw()` function just keeps on drawing the game, even after the game ends.
 
@@ -401,6 +402,7 @@ First, we have to let the user know that this is an available option! We'll use 
 function gameOver() {
   background(0);
   textAlign(CENTER);
+  fill("white");
   text("Game Over!", width/2, height/2);
   text("Click anywhere to try again", width/2, 3*height/4);
 }
@@ -565,6 +567,7 @@ function draw() {
 function gameOver() {
     background(0)
     textAlign(CENTER);
+    fill("white");
     text("Game Over!", width/2, height/2);
     text("Click anywhere to try again",width/2,3*height/4);
 }

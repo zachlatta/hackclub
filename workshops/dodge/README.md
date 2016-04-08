@@ -661,21 +661,18 @@ Feel free to customize the enemy's rotation speed to make it faster/slower!
 
 You're done, yay! You just need to add it to your website so that it's live on the internet!
 
-You can follow these instructions from the Personal Website workshop (hopefully they are a little familiar to you) to add your changes to GitHub:
+Just like we did in the Personal Website workshop, do the following steps to upload your Dodge game to your website.
 
-1. Open the terminal by pressing `alt + t` on the keyboard at the same time.
-   Type in the following commands:
+1. Open the terminal by pressing `alt + t` on the keyboard at the same time. Type in the following commands:
   - `git add --all`
   - `git commit -m "Create Dodge game"`
   - `git push`
 2. GitHub will now ask for your username and password.
   - Go ahead and enter the username and press the enter.
-  - Enter the password and press enter. _The characters won't show up on
-    the screen, but rest assured, they are still being typed._
-3. Now try to view the website by going to `USERNAME.github.io`
-   (make sure to replace `USERNAME` with our actual GitHub username)
+  - Enter the password and press enter. _The characters won't show up on the screen, but rest assured, they are still being typed._
+3. Now try to view the website by going to `USERNAME.github.io/dodge/` (make sure to replace `USERNAME` with your actual GitHub username)
 
-Don't forget to share your beautiful creation on the Slack on the [`#shipit`](https://starthackclub.slack.com/messages/shipit) channel!
+Don't forget to share a link to your beautiful creation on the Slack on the [`#shipit`](https://starthackclub.slack.com/messages/shipit) channel!
 
 ## Part IV. Hacking
 

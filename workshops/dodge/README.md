@@ -87,7 +87,7 @@ Let's add something for `setup()` to set up.
 
 ```js
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(250, 250);
 }
 ```
 
@@ -121,7 +121,7 @@ And now let's define it into existence. We'll need to decide where to place it, 
 
 ```js
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(250, 250);
   player = createSprite(width/2, height, 50, 50);
 }
 ```
@@ -147,7 +147,7 @@ Et voilà. Now we can view our sprite. It looks like it's cut off, though. Guess
 
 ```js
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(250, 250);
   player = createSprite(width/2, height-25, 50, 50);
 }
 ```
@@ -254,7 +254,7 @@ Now we add enemy sprite. This is like how we added the player sprite. First we d
 var enemy;
 
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(250, 250);
   player = createSprite(width/2, height-25, 50, 50);
   enemy = createSprite(width/2, 0, 10, 30);
 }
@@ -506,7 +506,7 @@ Next, we'll initialize them to values of our choice in `setup()`, and replace th
 
 ```js
 function setup() {
-  createCanvas(500,500);
+  createCanvas(250, 250);
   PLAYER_WIDTH = 50;
   PLAYER_HEIGHT = 50;
   ENEMY_WIDTH = 10;

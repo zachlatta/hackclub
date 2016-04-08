@@ -459,33 +459,203 @@ function mouseClicked() {
 
 Now we're in business. Mouse clicks will only reset the game if the game has ended, i.e., only on the game over screen.
 
-### Spicing it up
+### Spicing it Up
 
-You'll notice that these things are all sprites, which means you can substitute in your own images!
+Let's make Dodge beautiful. We're going to bring the game from looking like this:
 
-p5.js has a function called [`loadImage()`](http://p5js.org/reference/#p5/loadImage) into which you can pass the URL of an image as an argument. p5.play sprites have the method [`addImage()`](http://p5play.molleindustria.org/docs/classes/Sprite.html#method-addImage) that you can then pass the loaded image into.
+![Before spicing it up](img/before_spicing_it_up.gif)
 
-According to the documentation, we must preload this image first, which allows me to introduce another p5.js function: `preload()`. This function deals with everything that should happen before `setup()`. In our case, that's grabbing the image from its URL and storing it in a variable. Like player and enemy, we want this image to be accessible in multiple places, so we'll declare it outside of all functions, at the top.
+To looking like this:
 
-```js
-var playerImage;
-```
+![After we add images](img/after_spicing_it_up.gif)
 
-And we'll write this `preload()` function right above `setup()`:
+#### Adding Images
+
+To start, let's customize the game with images.
+
+We're providing the following images and have already uploaded them to an image host, giving us a URL to load the images from in our code.
+
+- _Player_
+
+  ![Player image](img/prophet_orpheus.png)
+
+  `https://surrogate.hackedu.us/i.imgur.com/N5uCbDu.png`
+
+- _Enemy_
+
+  ![Enemy image](img/asteroid.png)
+
+  `https://surrogate.hackedu.us/i.imgur.com/OdL0XPt.png`
+
+- _Background_
+
+  ![Background image](img/background.png)
+
+  `https://surrogate.hackedu.us/i.imgur.com/aKQOg3G.png`
+
+p5.js has a function called [`loadImage()`](http://p5js.org/reference/#p5/loadImage) that takes URL of an image as an argument and gives us a loaded image ready to be used. p5.play sprites have the method [`addImage()`](http://p5play.molleindustria.org/docs/classes/Sprite.html#method-addImage) that we can give a loaded image to assign it to the sprite.
+
+In addition to `setup()` and `draw()`, p5.play has a special function called `preload()`, which is run right when the page loads before `setup()`. `preload()` is generally used to load images and other resources (like sounds) into the game. Go ahead and declare `preload()` right before the `setup()` function.
 
 ```js
 function preload() {
-  playerImage = loadImage("https://surrogate.hackedu.us/i.imgur.com/H20lRKU.png");
+}
+
+function setup() {
+  ...
 }
 ```
 
-Now we'll use this image on our player by placing this line after its creation, in `setup()`:
+##### Customizing the Player
+
+Start by making a variable to hold our player image. Create this right below where we declared our `player` variable at the top of the file.
 
 ```js
-player.addImage(playerImage);
+...
+var player;
+var playerImage;
+...
 ```
 
-And now our player has a bit more personality, and is more relatable. Try customizing the enemy as well!
+Now let's load an image into `playerImage` in `preload()`.
+
+```js
+function preload() {
+  playerImage = loadImage("https://surrogate.hackedu.us/i.imgur.com/N5uCbDu.png");
+}
+```
+
+Add the loaded image to the `player`, right under where we create the player's sprite in `setup()`.
+
+```js
+function setup() {
+  ...
+  player = createSprite(width/2, height-25, 50, 50);
+  player.addImage(playerImage);
+  ...
+}
+```
+
+When we add an image to a sprite, the sprite's width and height is changed to match the image's. Because we're loading our sprite's image right after we create the sprite, we don't need to worry about the sprite's initial width and height. Let's just go ahead and set them to zero.
+
+```js
+function setup() {
+  ...
+  p̶l̶a̶y̶e̶r̶ ̶=̶ ̶c̶r̶e̶a̶t̶e̶S̶p̶r̶i̶t̶e̶(̶w̶i̶d̶t̶h̶/̶2̶,̶ ̶h̶e̶i̶g̶h̶t̶-̶2̶5̶,̶ ̶5̶0̶,̶ ̶5̶0̶)̶;̶
+  player = createSprite(width/2, height-25, 0, 0);
+  ...
+}
+```
+
+We were previously setting the player sprite's initial y coordinate to half of the sprite's width away from the bottom of the screen. Now that we're using an image instead of a placeholder square, we can replace `25` with half of the player image's height.
+
+```js
+function setup() {
+  ...
+  p̶l̶a̶y̶e̶r̶ ̶=̶ ̶c̶r̶e̶a̶t̶e̶S̶p̶r̶i̶t̶e̶(̶w̶i̶d̶t̶h̶/̶2̶,̶ ̶h̶e̶i̶g̶h̶t̶-̶2̶5̶,̶ ̶0̶,̶ ̶0̶)̶;̶
+  player = createSprite(width/2, height-(playerImage.height/2), 0, 0);
+  ...
+}
+```
+
+We're also going to want to make that same change in the `mouseClicked()` function.
+
+```js
+function mouseClicked() {
+  ...
+  p̶l̶a̶y̶e̶r̶.̶p̶o̶s̶i̶t̶i̶o̶n̶.̶y̶ ̶=̶ ̶h̶e̶i̶g̶h̶t̶-̶2̶5̶;̶
+  player.position.y = height-(playerImage.height/2);
+  ...
+}
+```
+##### Customizing the Enemy
+
+Now do the same for the enemy:
+
+```js
+...
+var enemy;
+var enemyImage;
+
+function preload() {
+  ...
+  enemyImage = loadImage("https://surrogate.hackedu.us/i.imgur.com/OdL0XPt.png");
+}
+
+function setup() {
+  ...
+  enemy = createSprite(width/2, 0, 10, 30);
+  enemy.addImage(enemyImage);
+}
+```
+
+And remember to change references to the enemy's placeholder height with it's image's actual height.
+
+```js
+function setup() {
+  ...
+  e̶n̶e̶m̶y̶ ̶=̶ ̶c̶r̶e̶a̶t̶e̶S̶p̶r̶i̶t̶e̶(̶w̶i̶d̶t̶h̶/̶2̶,̶ ̶0̶,̶ ̶1̶0̶,̶ ̶3̶0̶)̶;̶
+  enemy = createSprite(width/2, 0, enemyImage.width, enemyImage.height);
+  ...
+}
+```
+
+
+##### Customizing the Background
+
+And, finally, for the background. Go ahead and declare a new variable, `backgroundImage`, at the top of the file and load an image into it in `preload()`.
+
+```js
+...
+var enemyImage;
+var backgroundImage;
+
+function preload() {
+  ...
+  enemyImage = loadImage("https://surrogate.hackedu.us/i.imgur.com/OdL0XPt.png");
+  backgroundImage = loadImage("https://surrogate.hackedu.us/i.imgur.com/aKQOg3G.png");
+}
+```
+
+Now, go ahead and replace our existing `background()` call in `draw()` with `background(backgroundImage)`, to tell p5 to use an image for the background.
+
+```js
+function draw() {
+  ...
+  b̶a̶c̶k̶g̶r̶o̶u̶n̶d̶(̶0̶,̶ ̶5̶0̶,̶ ̶1̶0̶0̶)̶;̶
+  background(backgroundImage);
+}
+```
+
+Final thing: notice that the background image is 256 by 256 pixels, but the canvas is 250 by 250 pixels. Go ahead and change this to improve the look of the background image.
+
+```js
+function setup() {
+  c̶r̶e̶a̶t̶e̶C̶a̶n̶v̶a̶s̶(̶2̶5̶0̶,̶ ̶2̶5̶0̶)̶;̶
+  createCanvas(256, 256);
+  ...
+}
+```
+
+#### Rotating the Enemy
+
+In GIF of what we're aiming for, you'll notice that the asteroid (the `enemy`) is spinning.
+
+![](img/after_spicing_it_up.gif)
+
+This is actually quite easy to implement using p5.play. The [`Sprite`](http://p5play.molleindustria.org/docs/classes/Sprite.html) class in p5.play has an attribute called [`rotationSpeed`](http://p5play.molleindustria.org/docs/classes/Sprite.html#prop-rotationSpeed), which we can set to have p5.play rotate the sprite every time `draw()` is called.
+
+```js
+function setup() {
+  ...
+  enemy.addImage(enemyImage);
+  enemy.rotationSpeed = 4.0;
+}
+```
+
+Your game should now look pretty much identical to our target GIF. Rock on :punch:.
+
+Feel free to customize the enemy's rotation speed to make it faster/slower!
 
 ## Part III. Code Cleanup
 
@@ -613,3 +783,8 @@ Don't forget to share your beautiful creation on the Slack on the [`#shipit`](ht
 - Did you find it hard to restart the game because you had to switch from clicking to frantically mashing arrow keys to dodging the first enemy? Might it be better instead to use a key to restart the game? Or, might it be better to randomize the initial position to better your chances of survival? (Hint, we've already used the relevant functions in this workshop!)
 
 Infinite possibilities await you! [p5.js documentation](http://p5js.org/reference/) is a great resource, and can help you fulfill all of your wildest ambitions for this game!
+
+## Attributions
+
+- Lanea Zimmerman for the [Dirt Platformer Tiles](http://opengameart.org/content/dirt-platformer-tiles) tileset, which is used in the background image
+- The [Make Pixel Art](http://makepixelart.com) community for the [asteroid graphic](http://makepixelart.com/artists/anonymous/asteroid_33)

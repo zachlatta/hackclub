@@ -681,6 +681,7 @@ Don't forget to share a link to your beautiful creation on the Slack on the [`#s
 - What if the enemies didn't drop straight down, but instead bounced around the screen? Hah! Good luck dodging that!
 - What if there were levels in which they got faster, and the player got faster?
 - Did you find it hard to restart the game because you had to switch from clicking to frantically mashing arrow keys to dodging the first enemy? Might it be better instead to use a key to restart the game? Or, might it be better to randomize the initial position to better your chances of survival? (Hint, we've already used the relevant functions in this workshop!)
+- Right now we have a dinosaur that's avoiding asteroids in space. What if we made the game look like an RPG, where a hero is avoiding arrows that are being shot at them? Or something completely different? Good places to find free graphics for games are http://opengameart.org/ and http://makepixelart.com/. Make sure to give attribution to the creators though!
 
 Infinite possibilities await you! [p5.js documentation](http://p5js.org/reference/) is a great resource, and can help you fulfill all of your wildest ambitions for this game!
 

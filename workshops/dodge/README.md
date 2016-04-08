@@ -13,9 +13,9 @@ In this workshop, we're going to build a simple, yet addictive, game using JavaS
 
 - [Part I: Setup](#part-i-setup)
 - [Part II: The External JS File](#part-ii-the-external-js-file)
-- [Part III: Code Cleanup](#part-iii-code-cleanup)
-- [Part IV: Publishing and Sharing](#part-iv-publishing-and-sharing)
-- [Part V: Hacking](#part-v-hacking)
+- [Part III: Publishing and Sharing](#part-iii-publishing-and-sharing)
+- [Part IV Hacking](#part-iv-hacking)
+- [Attributions](#attributions)
 
 ## Part I. Setup
 
@@ -657,104 +657,7 @@ Your game should now look pretty much identical to our target GIF. Rock on :punc
 
 Feel free to customize the enemy's rotation speed to make it faster/slower!
 
-## Part III. Code Cleanup
-
-So we've used the various widths several times throughout our program, but it's almost impossible to tell by looking at the code, seeing as we never labeled them as such! What we have instead are these seemingly arbitrary numbers like "25" and "5" floating around. It's important to write code that's as clear and maintainable as possible, so that you (in the future) and others can quickly get up to speed and be able to make changes and improvements.
-
-We can get rid of these "magic numbers" by storing them as constants. Constants are variables that don't vary; i.e, they are set once and the value stays _constant_. First, we'll declare the existence of these constants, as we did our player and enemy variables:
-
-```js
-var PLAYER_WIDTH;
-var PLAYER_HEIGHT;
-var ENEMY_WIDTH;
-var ENEMY_HEIGHT;
-```
-
-I've used all capitals and underscores, which is the convention for naming constants.
-
-Next, we'll initialize them to values of our choice in `setup()`, and replace them in our creation of player and enemy, as well as in the `draw()` function.
-
-```js
-function setup() {
-  createCanvas(250, 250);
-  PLAYER_WIDTH = 50;
-  PLAYER_HEIGHT = 50;
-  ENEMY_WIDTH = 10;
-  ENEMY_HEIGHT = 30;
-  player = createSprite(width/2, height-(PLAYER_HEIGHT/2), PLAYER_WIDTH, PLAYER_HEIGHT);
-  enemy = createSprite(width/2, 0, ENEMY_WIDTH, ENEMY_HEIGHT);
-}
-```
-
-What's great about storing these values in constants is that if you want to make a change,  you only need to make that change in one place.
-
-We could clean up our code in a few other places as well. Always remember, simplify only after the function is correct. Get your code working, and then make it elegant.
-
-```js
-var PLAYER_WIDTH, PLAYER_HEIGHT, ENEMY_WIDTH, ENEMY_HEIGHT;
-var isGameOver, player, enemy;
-
-function setup() {
-    createCanvas(400,400);
-    PLAYER_WIDTH = 50;
-    PLAYER_HEIGHT = 50;
-    ENEMY_WIDTH = 10;
-    ENEMY_HEIGHT = 30;
-    isGameOver = false;
-    player = createSprite(width/2,height-(PLAYER_HEIGHT/2),PLAYER_WIDTH,PLAYER_HEIGHT);
-    var playerImage = loadImage("https://surrogate.hackedu.us/i.imgur.com/H20lRKU.png");
-    player.addImage(playerImage);
-    enemy = createSprite(width/2,0,ENEMY_WIDTH,ENEMY_HEIGHT);
-}
-
-function draw() {
-    if (isGameOver) {
-        gameOver();
-    } else {
-        background(0,0,100);
-
-        if (keyDown(LEFT_ARROW) && player.position.x > PLAYER_WIDTH/2) {
-            player.position.x -= 1;
-        }
-        if (keyDown(RIGHT_ARROW) && player.position.x < (width - PLAYER_WIDTH/2)) {
-            player.position.x += 1;
-        }
-
-        enemy.position.y += 3;
-        if (enemy.position.y > height) {
-            enemy.position.y = 0;
-            enemy.position.x = random(ENEMY_WIDTH/2,width-(ENEMY_WIDTH/2));
-        }
-
-        if (enemy.overlap(player)) {
-            isGameOver = true;
-        }
-
-        drawSprites();
-    }
-}
-
-function gameOver() {
-    background(0)
-    textAlign(CENTER);
-    fill("white");
-    text("Game Over!", width/2, height/2);
-    text("Click anywhere to try again",width/2,3*height/4);
-}
-
-function mouseClicked() {
-    if (isGameOver) {
-        isGameOver = false;
-        background(0,0,100);
-        player.position.x = width/2;
-        player.position.y = height-PLAYER_HEIGHT/2;
-        enemy.position.x = width/2;
-        enemy.position.y = 0;
-    }
-}
-```
-
-## Part IV. Publishing and Sharing
+## Part III. Publishing and Sharing
 
 You're done, yay! You just need to add it to your website so that it's live on the internet!
 
@@ -774,7 +677,7 @@ You can follow these instructions from the Personal Website workshop (hopefully 
 
 Don't forget to share your beautiful creation on the Slack on the [`#shipit`](https://starthackclub.slack.com/messages/shipit) channel!
 
-## Part V. Hacking
+## Part IV. Hacking
 
 - Isn't it a bit sad that there's a lose condition, but no win condition? Not even a score counter for number of enemies dodged?
 - Speaking of that, what if the objective of the game was to catch all the enemies instead of dodging them?

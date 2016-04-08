@@ -687,5 +687,7 @@ Infinite possibilities await you! [p5.js documentation](http://p5js.org/referenc
 
 ## Attributions
 
+Thank you to the following people for making this workshop possible.
+
 - Lanea Zimmerman for the [Dirt Platformer Tiles](http://opengameart.org/content/dirt-platformer-tiles) tileset, which is used in the background image
 - The [Make Pixel Art](http://makepixelart.com) community for the [asteroid graphic](http://makepixelart.com/artists/anonymous/asteroid_33)

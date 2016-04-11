@@ -188,7 +188,7 @@ if (keyDown(RIGHT_ARROW)) {
 }
 ```
 
-And we'll have corresponding behavior assigned to the left arrow key, except that we'll decement the position by 1:
+And we'll have corresponding behavior assigned to the left arrow key, except that we'll decrement the position by 1:
 
 ```js
 if (keyDown(LEFT_ARROW)) {
